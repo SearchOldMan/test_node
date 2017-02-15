@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>学生注册</title>
+	<link rel="stylesheet" href="css/my.css">
+</head>
+<body>
+	<div class="register">
+		<h3>你是还没注册的用户哦！<span style="color:#abc">注册一下吧</span></h3>
+		<form action="/register" method="post">
+			<p>
+				<label for="new_id">学号：</label>
+				<input type="text" id="new_id" name="new_id" placeholder="请输入学号">
+			</p>
+			<p>
+				<label for="new_student">姓名：</label>
+				<input type="text" id="new_student" name="new_name" placeholder="请输入姓名">
+			</p>
+			<p style="text-indent:4em">
+				<input type="radio" name="female" id="new_sex" checked="checked">男
+				<input type="radio" name="male" id="">女
+			</p>
+			<p>
+				<label for="new_student_pw">密码：</label>
+				<input type="password" id="new_student_pw" name="new_pw" placeholder="该密码用于登录">
+			</p>
+			<p>
+				<label for="new_class">班级：</label>
+				<input type="text" id="new_class" name="new_name" placeholder="请输入班级">
+			</p>
+			<p>
+				<label for="new_age">年龄：</label>
+				<input type="text" id="new_age" name="new_age" placeholder="请输入年龄">
+			</p>
+			<p style="text-indent:3em;">
+				<input type="submit" value="join in" style="width:60px;line-height: 22px;font-size:16px;">
+			</p>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%=role%></title>
+	<link rel="stylesheet" href="css/my.css">
+</head>
+<body>
+	<div class="box" id="box">
+		<div class="header" style="height:80px;line-height:80px;background: url('images/bg.png') repeat-x">
+			<p style="color:#fff;text-indent: 2em;font-size:40px;font-style:oblique;text-shadow:-6px 3px black;"><%=role%>系统</p>
+		</div>
+		<div class="content">
+			<p style="position: relative;">
+				<span><img src="images/person.jpg" alt="">当前用户：<strong><%=role%></strong></span>
+				<span><img src="images/clock.jpg" alt="">当前时间：<b id="time"></i></b></span>
+				<span style="position:absolute;right:20px">你好！<%=name%>&nbsp;<a href="#">【安全退出】</a></span>
+			</p>
+		</div>
+		<div id="box0">我是管理员显示出来了</div>
+		<div id="box1">我是教师显示出来了</div>
+		<div id="box2">我是学生显示出来了</div>
+		<div class="footer"></div>
+	</div>
+
+	<script>
+		var time = document.getElementById('time');
+		var date = new Date();
+		var d = '';
+		d += date.getFullYear() + '年' + (date.getMonth()+1) + '月' + date.getDate() + '日';
+		time.innerHTML = d;
+		//显示管理员的界面
+
+		function check_name(role,flag){
+
+			var box = document.getElementById('box');
+			var box0 = document.getElementById('box0');
+			var box1 = document.getElementById('box1');
+			var box2 = document.getElementById('box2');
+			if(role == '管理员'){
+				if(flag){
+					box1.style.display = 'none';
+					box2.style.display = 'none';
+				}else{
+					box.style.display = 'none';
+					alert('用户名或密码错误或者身份选择错误，请返回重试！');
+				}
+			}else if(role == '教师'){
+				if(flag){
+					box0.style.display = 'none';
+					box2.style.display = 'none';
+				}else{
+					box.style.display = 'none';
+					alert('用户名或密码错误或者身份选择错误，请返回重试！');
+				}
+			}else{
+				if(flag){
+					box0.style.display = 'none';
+					box1.style.display = 'none';
+				}else{
+					box.style.display = 'none';
+					alert('用户名或密码错误或者身份选择错误，请返回重试！');
+				}
+			}
+
+			
+		}
+
+		check_name("<%=role%>",<%=isTrue%>);
+	</script>
+</body>
+</html>
